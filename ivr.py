@@ -37,6 +37,7 @@ def call():
 def answers():
 	
 	response = plivo.Response()
+	global ivr_menu
 	response.addSpeak(body=ivr_menu['message'])
 	absolute_action_url = url_for('mm_response', _external=True)
 	getDigits = response.addGetDigits(action=absolute_action_url, method='POST',
