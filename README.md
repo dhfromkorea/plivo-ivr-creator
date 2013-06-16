@@ -16,4 +16,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
+* Update auth    _id and auth    _token and the url with your own id, token and url in the ivr file
+
+
 
