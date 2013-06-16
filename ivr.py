@@ -30,7 +30,7 @@ def call():
 		p = plivo.RestAPI(auth_id, auth_token)
 		number = int(request.form['call'])
 
-		params = {"from": 17322423252, "to": number, "answer_url": "http://agile-tundra-1297.herokuapp.com/answers"}
+		params = {"from": 17322423252, "to": number, "answer_url": "http://ancient-waters-9713.herokuapp.com/answers"}
 		response = p.make_call(params)
 		
 		return Response(json.dumps(response), mimetype='text/json')
