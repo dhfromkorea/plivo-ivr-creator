@@ -16,9 +16,6 @@ def index():
 	if request.method == 'POST':
 		global ivr_menu
 		ivr_menu = ast.literal_eval(request.form['ivr'])
-		
-		#session['ivr_menu'] = ivr_menu
-		#print ivr_menu
 		return redirect(url_for('call'))
 	return render_template('enter_json.html')
 
@@ -40,7 +37,6 @@ def call():
 def answers():
 	
 	response = plivo.Response()
-
 	response.addSpeak(body=ivr_menu['message'])
 	absolute_action_url = url_for('mm_response', _external=True)
 	getDigits = response.addGetDigits(action=absolute_action_url, method='POST',
@@ -52,8 +48,7 @@ def mm_response():
     post_args = request.form
     global ivr_menu
     input_digit = post_args.get('Digits', None)
-    ivr_menu = ivr_menu['actions'][int(input_digit)]   
-
+    ivr_menu = ivr_menu['actions'][int(input_digit)]
     response = plivo.Response()
     response.addSpeak(input_digit) 
     
