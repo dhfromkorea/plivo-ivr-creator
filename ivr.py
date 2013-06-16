@@ -6,7 +6,8 @@ import plivo
 import requests
 import json
 import ast
-
+global ivr_menu
+ivr_menu = ''
 
 ivr = Flask(__name__)
 ivr.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
