@@ -50,7 +50,7 @@ def answers():
 @ivr.route('/main_menu_response', methods=['POST',])
 def mm_response():
     post_args = request.form
-    
+    ivr_menu = session['ivr_menu']
     input_digit = post_args.get('Digits', None)
     session['ivr_menu'] = ivr_menu['actions'][int(input_digit)]
     response = plivo.Response()
