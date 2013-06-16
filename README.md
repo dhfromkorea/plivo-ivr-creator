@@ -1,7 +1,9 @@
 plivo-ivr-creator
 =================
 
-An application that creates an ivr service based on the json  given as input to it.
+An application that creates an ivr service based on the json  given as input to it. What this app does
+is that you specify the IVR system that you want in json string and specify the number to be called after
+the IVR system creation. The application creates an IVR system and calls the number entered.
 
 
 **Installation**
